@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>__Book Title__</title>
+
+        <script src="_bundle.js"></script>
+        <link rel="stylesheet" href="_bundle.css" />
+        <link rel="shortcut icon" href="favicon.png" />
+    </head>
+    <body class="hidden">
+        <!-- Book Title-->
+        <header>
+            <h1>📘 __Book Title__</h1>
+            <p class="subtitle">
+                Catchphrase or subtitle of the document
+            </p>
+        </header>
+
+        <!-- Table of Contents -->
+        <aside data-toc>
+            <section id="toc" data-title="Table of Contents"></section>
+        </aside>
+
+        <!-- Book chapters -->
+        <main>
+            <!-- =========== -->
+            <!-- CHAPTER ONE -->
+            <!-- =========== -->
+            <section data-chapter data-title="Chapter One"></section>
+
+            <!-- Document chapters -->
+            <section id="chapter-1.1" data-icon="icon-file-text2" data-title="First Sub-Chapter">
+                <div class="markdown">
+                    ### Chapter Content
+
+                    This is sub-chapter one.
+                </div>
+
+                <lsx-info-box>
+                    Use markdown syntax and <src-code language="html">&lt;lsx-…&gt;</src-code>
+                    HTML tags as you wish.
+                </lsx-info-box>
+            </section>
+
+            <section id="chapter-1.2" data-icon="icon-file-text2" data-title="Second Sub-Chapter">
+                <div class="markdown">
+                    ### Another chapter
+
+                    Here goes another sub-chapter, this one using the
+                    <src-code language="html">&lt;lsx-tab-pages&gt;</src-code>
+                    element and some syntax highlighted source code.
+                </div>
+
+                <lsx-tab-pages>
+                    <lsx-tab-page title="Determine Line Breaks">
+                        <source-code language="javascript">
+                            export function determineLinebreaks(text) {
+                                if (text.includes("\r\n")) return "\r\n";
+                                else if (text.includes("\n")) return "\n";
+                                else if (text.includes("\r")) return "\r";
+                                else return "";
+                            }
+                        </source-code>
+                    </lsx-tab-page>
+                    <lsx-tab-page title="Remove Leading Line Breaks">
+                        <source-code language="javascript">
+                            export function removeLeadingLinebreaks(text) {
+                                let linebreak = determineLinebreaks(text);
+                                if (linebreak === "") return text;
+
+                                while (text.startsWith(linebreak)) {
+                                    text = text.slice(linebreak.length);
+                                }
+
+                                return text;
+                            }
+                        </source-code>
+                    </lsx-tab-page>
+                </lsx-tab-pages>
+
+                <p>
+                    Some more content:
+                </p>
+                <lsx-ul emoji="🐻">
+                    <li>@dschulmeis/mini-tutorial.js</li>
+                    <li>@dschulmeis/lecture-slides.js</li>
+                    <li>@dschulmeis/ls-plugin-extra-tags</li>
+                    <li>@dschulmeis/ls-plugin-highlight.js</li>
+                    <li>@dschulmeis/ls-markdown</li>
+                </lsx-ul>
+
+                <lsx-carousel id="example">
+                    <lsx-carousel-page>
+                        <img src="https://picsum.photos/id/1026/1920/1080" class="d-block w-100" />
+                    </lsx-carousel-page>
+                    <lsx-carousel-page>
+                        <img src="https://picsum.photos/id/1041/1920/1080" class="d-block w-100" />
+                    </lsx-carousel-page>
+                    <lsx-carousel-page>
+                        <img src="https://picsum.photos/id/1050/1920/1080" class="d-block w-100" />
+                    </lsx-carousel-page>
+                </lsx-carousel>
+            </section>
+
+            <section id="chapter-1.3" data-icon="icon-file-text2" data-title="Web Development Quiz" data-background-color="rgb(231, 221, 141)">
+                <lsx-quiz prefix="Quiz #:">
+                    <lsx-exercise title="History of the Internet">
+                        <lsx-question
+                            type = "single-choice"
+                            text = "a) What was the name of the Internet's precursor?"
+                        >
+                            <lsx-answer>ADANET</lsx-answer>
+                            <lsx-answer correct>ARPANET</lsx-answer>
+                            <lsx-answer>Darker Net</lsx-answer>
+                            <lsx-answer>Global Web</lsx-answer>
+                        </lsx-question>
+
+                        <lsx-question
+                            type = "single-choice"
+                            text = "b) In which year the first computer went online?"
+                        >
+                            <lsx-answer>1959</lsx-answer>
+                            <lsx-answer>1963</lsx-answer>
+                            <lsx-answer correct>1969</lsx-answer>
+                            <lsx-answer>1971</lsx-answer>
+                        </lsx-question>
+                    </lsx-exercise>
+
+                    <lsx-exercise title="Technical Details on the Internet">
+                        <lsx-question
+                            type = "single-choice"
+                            text = "a) What is a Hypertext? "
+                        >
+                            <lsx-answer correct>A non-linear text with navigations and links</lsx-answer>
+                            <lsx-answer>A technical-oriented text with multimedia content</lsx-answer>
+                            <lsx-answer>A computer readable source code after compilation</lsx-answer>
+                            <lsx-answer>A particularly efficiently compressed, natural language text</lsx-answer>
+                        </lsx-question>
+
+                        <lsx-question
+                            type = "single-choice"
+                            text = "b) What is the complete URL of DHBW Karlsruhe including all optional components?"
+                        >
+                            <lsx-answer><code>karlsruhe.dhbw.de</code></lsx-answer>
+                            <lsx-answer><code>www.karlsruhe.dhbw.de</code></lsx-answer>
+                            <lsx-answer><code>https://www.karlsruhe.dhbw.de</code></lsx-answer>
+                            <lsx-answer correct><code>https://www.karlsruhe.dhbw.de/</code></lsx-answer>
+                            <lsx-answer><code>https://www.karlsruhe.dhbw.de/dhbw-karlsruhe/</code></lsx-answer>
+                            <lsx-answer><code>https://www.karlsruhe.dhbw.de/en/general/about-us.html</code></lsx-answer>
+                            <lsx-answer><code>https://www.karlsruhe.dhbw.de/en/general/about-us.html?lang=en</code></lsx-answer>
+                        </lsx-question>
+                    </lsx-exercise>
+                </lsx-quiz>
+            </section>
+
+            <!-- =========== -->
+            <!-- CHAPTER TWO -->
+            <!-- =========== -->
+            <section data-chapter data-title="Chapter Two"></section>
+
+            <!-- Document chapters -->
+            <section id="chapter-2.1" data-icon="icon-file-text2" data-title="First Sub-Chapter">
+                This is sub-chapter one.
+            </section>
+
+            <section id="chapter-2.1" data-icon="icon-file-text2" data-title="Second Sub-Chapter">
+                This is sub-chapter two.
+            </section>
+        </main>
+
+        <!-- Notes Sidebar -->
+        <aside data-notes>
+            <div>
+                <my-notes></my-notes>
+            </div>
+        </aside>
+
+        <!-- Navigation and Copyright -->
+        <footer>
+            <nav></nav>
+            <p>
+                © Your copyright information here
+            </p>
+        </footer>
+    </body>
+</html>
